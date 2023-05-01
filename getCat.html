@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT</title>
+</head>
+<body>
+  <div id="app">
+    <h1>CAT</h1>
+    <img :src="imgSrc" alt="cat?">
+    <button @click="getCat">getCat</button> 
+    
+  </div>
+  <!-- 이벤트리스너 대신 @클릭 뒤의 메서드 실행 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+ 
+  const app = new Vue({
+    el: '#app',
+    data: {
+      imgSrc: ""
+
+    },
+    methods: {
+      getCat: function () {
+        const url = ' https://api.thecatapi.com/v1/images/search'
+        axios.get(url)
+        .then(res => {
+          const data = res.data[0].url
+          this.imgSrc = res.data[0].url
+        }) 
+      }
+    }
+  })
+
+
+
+</script> 
+</body>
+</html>
