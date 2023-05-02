@@ -134,3 +134,12 @@ Vue componene 구조
 
 컴포넌트들이 tree구조를 이루어 하나의 페이지를 만든다. root에 해당하는 최상단
 component가 App.vue 
+
+######
+Vue CLI
+
+$vue create vue-cli    프로젝트 생성
+
+$cd vue-cli    프로젝트 디렉토리로 이동
+
+$npm run serve    프로젝트 실행
