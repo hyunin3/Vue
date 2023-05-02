@@ -39,3 +39,38 @@ data 뷰 인스턴스의 데이터 객체 혹은 인스턴스 속성. 추가된 
 this.message형태로 접근 가능
 
 methods 뷰 인스턴스의 메서드들을 정의하는 곳. 화살표 함수 사용불가
+
+######
+Node.js
+자바스크립트는 브라우저를 조작하는 유일한 언어이지만 브라우저 밖에 구동할 수 없음. 런타임 환경인 Node.js로 인해 브라우저가 아닌 환경에서도 JS구동 가능해짐
+
+npm(node package manage)
+자바스크립트 패키지 관리자
+
+구조
+node_modules 파이썬의 venv와 비슷한 역할
+node_modules-Babel 자바스크립트의 ES6+코드를 구버전으로 변환해주는 도구
+node_modules-Webpack 모듈간 의존성 문제 해결
+
+Module 개발하는 어플이 커지고 복잡해져서 여러개로 분리하여 관리하게 되었고 분리된 각각이 모듈. 모듈 의존성 문제를 해결해주는 작업을 Bundling이라고 하고 웹팩은 번들러 중 하나. 의존성을 웹팩이 알아서 담당해줘서 npm install을 사용해 한번에 설치하고 각각 활용 가능
+
+package-lock.json 파이썬의 requirements.txt 역할
+
+public/index.html Vue앱의 뼈대가 되는 html파일. base.html같은거
+
+######
+src/
+
+1. src/assets 정적 파일을 저장하는 디렉토리
+2. src/components 하위 컴포넌트들이 위치
+3. src/App.vue 최상위 컴포넌트, public/index.html과 연결됨
+4. src/main.js 웹팩이 빌드를 시작할 때 가장 먼저 불러오는 entry point, vue전역에서 
+   활용할 모듈을 등록할 수 있는 파일
+
+######
+Component
+
+UI를 독립적이고 재사용 가능한 조각들로 나눈 것. 기능별로 분화한 코드 조각.
+src/App.vue를 루트로 하는 트리의 구조를 가짐. 유지보수와 재사용에 유리
+
+우리가 사용하는 웹 서비스는 여러개의 컴포넌트로 이루어져 있음. 하나의 컴포넌트 만들어두면 반복되는 UI 쉽게 처리 가능
