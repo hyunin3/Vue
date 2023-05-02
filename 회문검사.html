@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta charset="utf8">
+  <title>Hello, world</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <h1>회문 검사기</h1>
+  <div>{{message}}</div>
+  <div>{{message.split('').reverse().join('')}}</div>
+  <input type="text" v-model="message">
+  <button @click="check">확인하기</button>
+  <!-- <p v-if="message==''"></p> 보여주는것과 관련된 것 -->
+  <!-- 문제에서 요구하는건 동작과 관련되어 다르게 보여주는 것 -->
+</div>
+
+<script type="text/javascript">
+   var app = new Vue({
+        el : '#app',
+        data: {
+          message: '',
+        },
+        methods: {
+        check: function () {
+    if (this.message===''){
+      alert('입력값이 없습니다!')
+    } else if (this.message===this.message.split('').reverse().join('')){
+      alert('회문입니다!')
+    } else {
+      alert('회문이 아닙니다!')
+    }
+    
+  }
+}
+   });
+</script>
+
+</body>
