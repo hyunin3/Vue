@@ -9,10 +9,11 @@
 <body>
   <div id="app">
     <h1>Popular Movies</h1>
-    <button @click="rate">평점 높은 영화</button>
-    
     <div>
-      <li></li>
+        <li v-for="movie in highscore" :key="movie.backdrop_path">
+            <p>{{ movie.title }} | {{ movie.vote_average }}</p>
+        </li>
+
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -422,22 +423,13 @@
     "total_results": 10000
   }
       },
-      methods: {
-        // check () {
-        //     console.log(this.movieinfo.results)
-        //     console.log(this.movieinfo.results.vote_average)
-        //     if (this.movieinfo.results.vote_average>=8) {
-        //         // console.log('영화')
-        //         alert(this.movieinfo.results.original_title)
-        //     }
-        // }
-        
-        rate () {
-            console.log(this.movieinfo.results.filter(resultse => results.vote_average>=8))
-            // const movieList = this.movieinfo.results.filter(resultse => results.vote_average>=8)
-            // alert(movieList)
+      computed: {
+        highscore () {
+            const goodMovie = this.movieinfo.results.filter(results => results.vote_average >=8)
+            return goodMovie
         }
       }
+   
     })
   </script>
 </body>
