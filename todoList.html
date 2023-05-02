@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+
+  <style>
+    .finish {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Todo List</h1>
+
+  <div id="app">
+    <input type="text" v-model="content">
+    <button @click="addTodo">append in list</button>
+    <ul>
+      <li v-for="todo in todoList" :key="todo.date">
+        <input type="checkbox" @click="updateTodo(todo)">
+
+        <span :class="{ finish: todo.finish }">{{ todo.content }}</span>
+
+      </li>
+    </ul>
+    <br>
+
+    <button @click="deleteTodo">완료 목록 삭제</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        content: '',
+        todoList: [],
+      },
+      methods: {
+        addTodo (event) {
+          const todo = {
+            content: this.content,
+            finish: false,
+            
+          }
+          this.todoList.push(todo)
+          this.content = ''
+        },
+
+        updateTodo (todo) {
+          todo.finish = !todo.finish
+        },
+
+        deleteTodo () {
+          const newTodoList = this.todoList.filter(function (todo) {
+            return !todo.finish
+          })
+          this.todoList = newTodoList
+
+        }
+      }
+    })
+
+  </script>
+
+</body>
+</html>
