@@ -153,9 +153,9 @@ component로 구분된 페이지들이 데이터를 공유하게 해야함
 자식->부모 데이터 흐름은 emit event방식
 
 ######
-pass pros
+pass props
 요소의 속성을 사용하여 데이터 전달. 부모 컴퍼넌트의 정보를 전달하기 위한 특성
-자식 컴포넌트는 pros옵션을 사용하여 수신하는 pros를 명시적으로 선언해야함
+자식 컴포넌트는 pros옵션을 사용하여 수신하는 props를 명시적으로 선언해야함
 
 정적인 데이터 static props라고 명시, prop-data-name="value"형태로 데이터 전달
 속성의 키값은 kebab-case사용
