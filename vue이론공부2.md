@@ -60,3 +60,28 @@ mapGetters
 Modules
 vuex store를 여러 파일로 나눠서 관리할 수 있게 함. 가독성 향상
 
+
+######
+UX(user experience)
+유저가 느끼는 느낌, 태도, 행동을 디자인
+
+UI(user interface)
+유저에게 보여지는 화면을 디자인
+
+######
+Routing
+네트워크에서 경로를 선택하는 프로세스. 유저가 접근한 URL에 대해 적절한 결과 응답
+
+Routing in SSR 
+server가 모든 라우팅 통제. URL로 요청이 들어오면 응답으로 완성된 HTML제공. 결정권을 서버가 가짐
+
+Routing in SPA/CSR
+서버는 하나의 HTML만을 제공. 이후 모든 동작은 하나의 HTML 문서 위에서 JS코드를 활용. 하나의 URL만 가질 수 있음
+
+동작에 따라 URL이 반드시 바뀌어야 하는 것은 아니지만 유저의 사용성 관점에서는 필요함
+Routing이 없다면 새로고침 시 첫 페이지로 돌아가고, 링크 공유 시 첫 페이지만 공유 가능하고, 브라우저 뒤로 가기는 사용불가
+
+######
+Vue Router 
+SPA를 MPA처럼 URL을 이동하면서 사용가능, SPA의 단점인 URL이 변경되지 않는다는 점을 해결
+
