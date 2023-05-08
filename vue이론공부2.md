@@ -18,3 +18,14 @@ const name = localStorage.getItem('name')
 JSON.stringify
 
 JSON객체의 메서드, 자바스크립트 객체를 JSON형식의 문자열로 변환하여 반환
+const stringifyNumbers = JSON.stringify(numbers)
+
+JSON.parse
+
+JSON 형식의 문자열을 자바스크립트 객체로 변환하여 반환. 객체 object타입으로 나옴
+const parsedAge = JSON.parse(age)
+number, object
+
+######
+plugins
+Vuex store에 추가적인 기능, 일반적으로 어플리케이션 기능 최적화 목적
