@@ -4,15 +4,20 @@
     <button @click="getLottoNumber">행운번호 받기</button>
     <hr>
     <p v-if="lottoNumber.length">{{ lottoNumber }}</p>
+    <PastNumbers/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import lodash from 'lodash'
+import PastNumbers from '@/components/PastNumbers.vue'
 
 export default {
   name: 'MyLotto',
+  components: {
+    PastNumbers
+  },
   data () {
     return {
       lottoNumber: [],
