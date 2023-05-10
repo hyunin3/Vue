@@ -120,7 +120,24 @@ router-link의 to속성으로 주소 전달
 프로그래밍 방식 네비게이션
 vue인스턴스 내부에서 라우터 인스턴스에 $router로 접근할 수 있음. 다른 url로 이동하려면 this.$router.push사용. history stack에 이동할 url 푸시하는 방식
 
-
-######
 lazy-loading
 모든 파일을 한번에 로드하지 않고 당장 사용하지 않을 컴포넌트는 먼저 로드하지 않음
+
+######
+Navigation Guard
+router를 통해 특정 URL에 접근할 때 접근을 막는 방법. 로그인 안하면 접근 못하게 하는 등
+
+1. 전역 가드 global before guard
+   다른 url주소로 이동시 항상 실행. router.beforeEach()를 사용하여 설정
+   콜백함수 값으로 to, from, next 받음. url이 변경되어 화면이 전환되기 전 router.beforeEach()가 호출되고 화면이 전환되지 않고 대기 상태가 됨. next()가 호출되기 전까지 화면이 전환되지 않음
+
+2. 라우터 가드 
+   beforeEnter() route에 진입했을 때 실행됨. 라우터 등록한 위치에 추가. 
+   콜백함수 값으로 to, from, next 받음. 로그인 상태일 때 로그인 시도하면 홈으로 이동
+
+3. 컴포넌트 가드
+   beforeRouteUpdate() 특정 컴포넌트 내에서 가드를 지정하고 싶을 때 사용. 해당 컴포넌트를 렌더링하는 경로가 변경될 때 실행.
+
+to: 이동할 URL 정보가 담긴 Route 객체
+from: 현재 URL 정보가 담긴 Route 객체
+next: 지정한 URL로 이동하기 위해 호출되는 함수. 콜백함수 내부에서 한번만 호출되어야하고 기본적으로 to에 해당하는 URL로 이동
