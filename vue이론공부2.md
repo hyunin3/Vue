@@ -44,7 +44,7 @@ mapState
 mapState({message: state => state.message})
 mapState(['message'])
 
-mapActions
+mapActions    맵액션은 액션 가져오는거구나
 컴포넌트에서 this.$store.dispatch()를 호출하는 대신 액션 메서드를 직접 호출하여 사용 가능
 객체 혹은 배열 형태로 매핑 가능
 @keyup.enter="changeMessage(inputData)" 
@@ -53,11 +53,11 @@ mapActions({
   actionsChangeMessage: 'changeMessage'
 })
 
-mapGetters
+mapGetters 이게 이거 가져오는 거구나
 같은 방식으로 사용 가능
 
 ######
-Modules
+Modules 이름이 모듈이구나
 vuex store를 여러 파일로 나눠서 관리할 수 있게 함. 가독성 향상
 
 
@@ -94,7 +94,7 @@ Routing이 없다면 새로고침 시 첫 페이지로 돌아가고, 링크 공�
 Vue Router 
 SPA를 MPA처럼 URL을 이동하면서 사용가능, SPA의 단점인 URL이 변경되지 않는다는 점을 해결
 
-history mode
+history mode   서술형 
 새로고침 없이 url 이동기록 남길 수 있고 우리에게 익숙한 구조로 사용가능
 
 router-link
