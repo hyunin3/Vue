@@ -1,0 +1,16 @@
+$vue create vue-cli    프로젝트 생성
+
+$cd vue-cli    프로젝트 디렉토리로 이동
+
+$npm run serve    프로젝트 실행
+
+
+vue add vuex
+
+vue create vue-router-app
+
+cd vue-router-app
+
+vue add router
+
+npm i axios
